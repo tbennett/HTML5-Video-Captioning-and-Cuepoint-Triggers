@@ -64,17 +64,17 @@ function func3()
 	$('.pop').html('<p>E=MC<sup>2</sup> is NOT Statistical Data!!</p>');
 	$('.pop').fadeIn(1000);
 	$('.pop').fadeOut(4000);
-	$('#web').attr('src', 'http://www.aip.org/history/einstein/emc1.htm');
+	$('#web').attr('src', 'https://www.britannica.com/biography/Albert-Einstein');
 }
 
 function func4()
 {
-	$('#web').attr('src', 'http://en.wikipedia.org/wiki/Paradigm_shift');
+	$('#web').attr('src', 'https://en.wikipedia.org/wiki/Paradigm_shift');
 }
 
 function func5()
 {
-	$('#web').attr('src', 'http://en.wikipedia.org/wiki/Domestic_violence');
+	$('#web').attr('src', 'https://en.wikipedia.org/wiki/Domestic_violence');
 }
 
 function func6()
