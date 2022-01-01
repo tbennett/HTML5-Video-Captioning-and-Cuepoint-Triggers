@@ -12,10 +12,12 @@ h1 {
 }
  
 #container {
-  display:block;
+  display:grid;
+  grid-gap: 3%;
+  grid-template-columns: 1fr 2fr;
   position: relative;
-  width:960px;
   margin:auto;
+  max-width: 1024px;
 }
 
 
@@ -25,16 +27,14 @@ h1 {
 }
 
 .col1 {
-	float:left;
-	width:360px;
+	//width:360px;
 	border:1px solid black;
 	margin-right: 5%;
 }
  
 
 .col2 {
-	float:left;
-	width:50%;
+	//width:50%;
 }
 
 

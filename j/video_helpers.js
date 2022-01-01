@@ -55,12 +55,6 @@
 		pause_button.disabled = true;          
 	}
 
-	function onTimeupdate(clip) 
-	{
-		var current = document.getElementById('vid').currentTime;
-		//document.getElementById('slider').value = current;
-	}
-
 	function playRate(clip, rate) 
 	{
 		clip.playbackRate = rate;
