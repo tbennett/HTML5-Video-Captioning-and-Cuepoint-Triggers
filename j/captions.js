@@ -2,7 +2,7 @@
 * captions.js
 *
 * A modification of Bruce Lawson's HTML5 Captions Hack
-* rewritten using jQuery and formatted as an encapsulated object.
+* rewritten using jQuery and formatted as an IIFE.
 * by Troy Bennett
 * 7-2010
 *

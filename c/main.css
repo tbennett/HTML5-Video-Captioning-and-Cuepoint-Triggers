@@ -1,8 +1,6 @@
 
-article, aside, dialog, 
-figure, footer, header,
-hgroup, menu, nav, section { 
-	display: block; 
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -22,7 +20,7 @@ h1 {
 
 
 #vid {
-	width:352px
+	width:352px;
 	height:288px;
 }
 
@@ -83,6 +81,15 @@ iframe {
 	padding:15px;
 	font-weight:bold;
 	z-index:3;
+  opacity: 1;
+  transition: all .1s;
+}
+
+
+
+.hide {
+  opacity:0;
+  transition: all 3s;
 }
 
 

@@ -1,12 +1,8 @@
 <!doctype html>
-<html lang=en>
+<html lang="en">
 <head>
 <title>Accessible HTML5 video demo: how to leverage a synergy.</title>
-<meta charset=utf-8>
-
-<!--[if IE]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+<meta charset="utf-8">
 
 
 <link rel="stylesheet" type="text/css" href="c/main.css" />
@@ -20,16 +16,17 @@
 
 <div class="col1">
 	
-	<video id="vid" width="352"  ontimeupdate="onTimeupdate()">
+	<video id="vid" width="352">
 		<source src="assets/leverage-a-synergy.mp4"  type="video/mp4"  />
 		<source src="assets/leverage-a-synergy.webm" type="video/webm" />
 		<source src="assets/leverage-a-synergy.ogv" type="video/ogg" />
+		<track default kind="captions" srclang="en" src="captions/synergy.vtt" />
 
 		<!-- final fallback to text -->
 		<h2>How to leverage a synergy</h2>
 		<p>Hi, my name's Dr Archimedes Einstein and I'm a Doctor of Science at the University of Science in a very famous town that you're too stupid to have heard of. Anyway, today we're going to talk about "synergies". A lot of people are worried about synergies, but I can tell you that statistics show there is no danger of increased cancer risk from synergies. However, it's better to be safe than sorry. I'm going to demonstrate how you how we can leverage a synergy.
 		</p>
-		<p>First of all, I've got this banana. This banana represents "Web 2.0" and look, I've written on it some "user-generated content" just to prove the point [LOL, WTF, You suck]. I take my "Web 2.0" and I put it in an envelope marked "paradigm shift". OK. Very important, I put the envelope down and With a bit of "blue sky thinking", I "push the envelope". Then, I take my leverage mallet, and URGH! RGRRRRRARGRGGH!! EURGGGARRRRGGGRRGARGGAHAARRAGGHGRRAGAHAARGH!!!! ...and there we can see a synergy, leveraged.
+		<p>First of all, I've got this banana. This banana represents "Web 2.0" and look, I've written on it some "user-generated content" just to prove the point [LOL, WTF, You suck]. I take my "Web 2.0" and I put it in an envelope marked "paradigm shift". OK. Very important, I put the envelope down and With a bit of "blue sky thinking", I "push the envelope". Then, I take my leverage mallet, and URGH! GRRAHH!! YARRRR!!!! ...and there we can see a synergy, leveraged.
 		</p>	
 	</video>
 	
@@ -59,7 +56,7 @@
 	<div id="special">
 		<form>
 			<fieldset>
-					<legend>Currently, these only work in Safari</legend>
+					<legend>Currently, rewind only works in Safari</legend>
 				<input type=button id="rw" onclick="playRate(vid,-1)" value="&lt; &lt;rewind" />
 				<input type=button id="ff" onclick="playRate(vid,2)" value="fast forward >>" />
 				<input type=button id="slo" onclick="playRate(vid,.5)" value="slo mo >" />
@@ -109,8 +106,6 @@
 
 </div>
 
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="j/captions.js"></script>
 <script src="j/cuepoints.js"></script>
 <script src="j/video_helpers.js"></script>
 <script src="j/main.js"></script>

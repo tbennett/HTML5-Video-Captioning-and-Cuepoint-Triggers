@@ -12,7 +12,7 @@
 		play_button.disabled = false;
 		pause_button.disabled = true;
 		clip.load();
-		PlayVideo(clip);
+		playVideo(clip);
 	}
 
 	function playVideo(clip) 

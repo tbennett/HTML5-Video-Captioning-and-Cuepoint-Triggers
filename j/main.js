@@ -1,3 +1,5 @@
+'use strict'
+
 /**
  * main.js
  * The init script for this HTML5 Video Application
@@ -7,77 +9,81 @@
  *
  * @NOTE: Mozilla released Popcorn and Butter for doing the same thing right after I got
  * this working.
+ * 
+ * @UPDATE: Popcorn and Butter are dead. This is now useful again. I've updated it be vanilla JS
+ * with no dependencies.
  * by Troy Bennett
- * 7-2010
+ * 7-2010 (updated 12-2021)
  */
 
 
 
-	$('document').ready(function(){
+ document.addEventListener('DOMContentLoaded', (e) => {
 		
-		var vid = $('#vid');
-		var play_button = $('#play_button');
-		var pause_button = $('#pause_button');
+	const vid = document.querySelector('#vid');
+	const play_button = document.querySelector('#play_button');
+	const pause_button = document.querySelector('#pause_button');
+	
+	//document.querySelector('#caption').style.width = "100%";
+	document.querySelector('.pop').classList.toggle('hide');
+	
+	var myCues = [
+	
+		{seconds: 2, callback: func1}, 
+		{seconds: 9, callback: func2}, 
+		{seconds: 15, callback: func3},
+		{seconds: 25, callback: func6},
+		{seconds: 37, callback: func4},
+		{seconds: 50, callback: func5}
 		
-		$('#caption').width(352);
-		$('.pop').fadeOut(0);
+	];
 		
-		var myCues = [
-		
-			[2, func1], 
-			[9, func2], 
-			[15, func3],
-			[25, func6],
-			[37, func4],
-			[50, func5]
-			
-		];
-			
-		__CueTimer.create('vid', myCues);
-		__VidCaptioner.create('vid', 'transcript');
-		
-	});
+	__CueTimer.setup('vid', myCues);
+	
+});
 
 
 
 
-//the custom callback functions to trigger when a cue-point is hit.
-//Warning! In firefox alerts seem to be called multiple times, 
-//yet the function only registers being called once.
+//the custom callback functions to trigger when a cuepoint is hit.
+//You can code up whatever behavior you need in your own callbacks
+
 function func1()
 {
-	//alert('cue 1 fired');
-	$('#vid').css('outline', '10px solid red');
-	$('#caption').width(352);
+	document.querySelector('#vid').style = "outline : 10px solid red";
+	//document.querySelector('#caption').style.width = "100%";
 }
 
 function func2()
 {
-	$('.pop').html('<p>Ohh Snap!</p>');
-	$('.pop').fadeIn(0);
-	$('.pop').fadeOut(4000);
+	let pop = document.querySelector('.pop');
+	pop.innerHTML = '<p>Ohh Snap!</p>';
+	document.querySelector('.pop').classList.toggle('hide');
+	setTimeout(()=> {document.querySelector('.pop').classList.toggle('hide')}, 2000);
 }
 
 function func3()
 {
-	$('#vid').css('outline', '0px solid red');
-	$('.pop').html('<p>E=MC<sup>2</sup> is NOT Statistical Data!!</p>');
-	$('.pop').fadeIn(1000);
-	$('.pop').fadeOut(4000);
-	$('#web').attr('src', 'https://www.britannica.com/biography/Albert-Einstein');
+	let pop = document.querySelector('.pop');
+	pop.innerHTML = '<p>E=MC<sup>2</sup> is NOT Statistical Data!!</p>';
+	document.querySelector('.pop').classList.toggle('hide');
+	setTimeout(()=> {document.querySelector('.pop').classList.toggle('hide')}, 2000);
+	document.querySelector('#vid').style = 'outline: 0px solid red';
+	document.querySelector('#web').src = 'https://www.britannica.com/biography/Albert-Einstein';
 }
 
 function func4()
 {
-	$('#web').attr('src', 'https://en.wikipedia.org/wiki/Paradigm_shift');
+	document.querySelector('#web').src = 'https://en.wikipedia.org/wiki/Paradigm_shift';
 }
 
 function func5()
 {
-	$('#web').attr('src', 'https://en.wikipedia.org/wiki/Domestic_violence');
+	document.querySelector('#web').src = 'https://en.wikipedia.org/wiki/Domestic_violence';
 }
 
 function func6()
 {
-	$('#web').attr('src', 'images/koljr-banana-splits-400.jpg');
+	document.querySelector('#web').src = 'images/koljr-banana-splits-400.jpg';
 }
+
