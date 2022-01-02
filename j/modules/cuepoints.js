@@ -13,6 +13,8 @@
 
 /* use it like this:
 
+import { cueTimer } from './modules/cuepoints.js';
+
 document.addEventListener('DOMContentLoaded', (e) => {
 	
 	var myCues = [
@@ -24,17 +26,17 @@ document.addEventListener('DOMContentLoaded', (e) => {
 		];
 
 		
-	__CueTimer.setup('vid', myCues);
+	cueTimer.setup('vid', myCues);
 	
 });
 */
 
 
-var __CueTimer = (function() {
+const CueTimer = () => {
 
 	let previous_cue;	// flag to prevent callback being trigger more than once.
 
-	let init = function(vidId, cuesArray) {
+	const init = function(vidId, cuesArray) {
 		
 		const vidRef = '#' + vidId;
 
@@ -70,4 +72,6 @@ var __CueTimer = (function() {
 	
 	return {setup: init};
 	
-})();
+}
+
+export const cueTimer = CueTimer();

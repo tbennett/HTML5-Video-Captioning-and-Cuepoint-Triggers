@@ -1,4 +1,4 @@
-'use strict'
+import { cueTimer } from './modules/cuepoints.js';
 
 /**
  * main.js
@@ -10,27 +10,23 @@
  * @NOTE: Mozilla released Popcorn and Butter for doing the same thing right after I got
  * this working.
  * 
- * @UPDATE: Popcorn and Butter are dead. This is now useful again. I've updated it be vanilla JS
+ * @UPDATE: Popcorn and Butter are dead. This is now useful again. I've updated it to be vanilla JS
  * with no dependencies.
  * by Troy Bennett
  * 7-2010 (updated 12-2021)
  */
 
-
+ 
 
  document.addEventListener('DOMContentLoaded', (e) => {
 		
-	const vid = document.querySelector('#vid');
-	const play_button = document.querySelector('#play_button');
-	const pause_button = document.querySelector('#pause_button');
 	
-	//document.querySelector('#caption').style.width = "100%";
 	document.querySelector('.pop').classList.toggle('hide');
 	
 	var myCues = [
 	
-		{seconds: 2, callback: func1}, 
-		{seconds: 9, callback: func2}, 
+		{seconds: 2,  callback: func1}, 
+		{seconds: 9,  callback: func2}, 
 		{seconds: 15, callback: func3},
 		{seconds: 25, callback: func6},
 		{seconds: 37, callback: func4},
@@ -38,7 +34,7 @@
 		
 	];
 		
-	__CueTimer.setup('vid', myCues);
+	cueTimer.setup('vid', myCues);
 	
 });
 
@@ -51,7 +47,6 @@
 function func1()
 {
 	document.querySelector('#vid').style = "outline : 10px solid red";
-	//document.querySelector('#caption').style.width = "100%";
 }
 
 function func2()
