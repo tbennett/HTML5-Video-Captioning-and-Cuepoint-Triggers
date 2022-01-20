@@ -6,11 +6,10 @@
  */
 
 
-	function selectVideo(clip) 
+	function selectVideo(e, clip) 
 	{
-		clip.src = video_form.video_select.value;
-		play_button.disabled = false;
-		pause_button.disabled = true;
+		console.log(e, clip);
+		clip.src = e.target.value;
 		clip.load();
 		playVideo(clip);
 	}
@@ -18,8 +17,6 @@
 	function playVideo(clip) 
 	{
 		clip.play();
-		play_button.disabled = true;
-		pause_button.disabled = false;      
 	}
 
 	function seekVideo(clip, position) 
@@ -27,15 +24,11 @@
 		if(!position) position = 0;
 		clip.currentTime = position;
 		clip.play();
-		play_button.disabled = false;  
-		pause_button.disabled = true;     
 	}
 
 	function pauseVideo(clip) 
 	{
 		clip.pause();
-		play_button.disabled = false;  
-		pause_button.disabled = true;          
 	}
 
 	function muteVid(clip) 
@@ -51,8 +44,6 @@
 	function onFinished(clip) 
 	{
 		clip.currentTime = 0;
-		play_button.disabled = false;
-		pause_button.disabled = true;          
 	}
 
 	function playRate(clip, rate) 

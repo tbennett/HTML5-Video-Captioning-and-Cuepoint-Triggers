@@ -53,7 +53,7 @@
 						<input type="button" id="seek" onclick="seekVideo(vid, 14)" value="Go to Statistics" />
 					</fieldset>
 					<fieldset>
-						<select name="video_select" onchange="selectVideo(vid);">
+						<select id="video_select">
 							<option>Select a video to play...</option>
 							<option value="assets/leverage-a-synergy.mp4">Leverage(mp4)</option>
 							<option value="assets/leverage-a-synergy.ogv">Leverage(ogv)</option>
@@ -66,8 +66,9 @@
 			<div id="special">
 				<form>
 					<fieldset>
-						<legend>Currently, rewind only works in Safari</legend>
-						<input type=button id="rw" onclick="playRate(vid,-1)" value="&lt; &lt;rewind" />
+						<label>Currently, rewind only works in Safari
+							<input type=button id="rw" onclick="playRate(vid,-1)" value="&lt; &lt;rewind" />
+						</lable>
 						<input type=button id="ff" onclick="playRate(vid,2)" value="fast forward >>" />
 						<input type=button id="slo" onclick="playRate(vid,.5)" value="slo mo >" />
 					</fieldset>

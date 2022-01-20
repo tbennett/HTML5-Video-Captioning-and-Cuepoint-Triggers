@@ -38,7 +38,10 @@ import { cueTimer } from './modules/cuepoints.js';
 	
 });
 
-
+let vid = document.querySelector('#vid');
+document.querySelector('#video_select').addEventListener('change', (e)=> {
+	selectVideo(e, vid); 
+}, vid);
 
 
 //the custom callback functions to trigger when a cuepoint is hit.

@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 const CueTimer = () => {
 
-	let previous_cue;	// flag to prevent callback being trigger more than once.
+	let previous_cue;	// flag to prevent callback being triggered more than once.
 
 	const init = function(vidId, cuesArray) {
 		

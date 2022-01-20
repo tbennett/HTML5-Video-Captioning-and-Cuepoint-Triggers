@@ -1,7 +1,13 @@
-This app was created to assist digital media students in the creation of HTML5 videos which contained closed-captions / subtitles and cuepoints.  The video should be navigable via links or buttons to discrete locations in the video.  This is similar to a "bookmark".
+This module was created to assist digital media students in the creation of Dynamic 
+HTML5 videos. This code will trigger a function to run at a specific timed "cuepoint". 
+The action that the cuepoint triggers is totally up to the 
+designer / developer. 
 
-Additionally, when the video gets to a specific point, it should trigger a function to run. The action that the cuepoint triggers is totally up to the designer / developer.
-A simple array is populated with cuepoint objects to create a "playlist" of times and callbacks.
+This example demonstrates how to make a navigable video via custom links or buttons.  
+This will allow the creation of chapter markers or bookmarks.
+
+A simple array is populated with cuepoint objects to create a "playlist" 
+of times and callbacks.
 
  /* use it like this:
 
