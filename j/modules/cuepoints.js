@@ -6,7 +6,7 @@
 * Inspired by Bruce Lawson's HTML5 Captions Hack
 * written using jQuery and formatted as an IIFE.
 * by Troy Bennett
-* 7-2010 (revise 12-2021)
+* 7-2010 (revised 12-2021 to be vanilla JS)
 *
 *
 */
@@ -37,11 +37,9 @@ const CueTimer = () => {
 	let previous_cue;	// flag to prevent callback being triggered more than once.
 
 	const init = function(vidId, cuesArray) {
-		
-		const vidRef = '#' + vidId;
 
 		//add the event listener to the video element
-		document.querySelector(vidRef).addEventListener('timeupdate', (e) => 
+		document.getElementById(vidId).addEventListener('timeupdate', (e) => 
 		{
 			const video = e.target || window.srcElement;
 			let now = Math.floor(video.currentTime);

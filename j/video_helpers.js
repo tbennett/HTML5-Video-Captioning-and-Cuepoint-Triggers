@@ -8,7 +8,6 @@
 
 	function selectVideo(e, clip) 
 	{
-		console.log(e, clip);
 		clip.src = e.target.value;
 		clip.load();
 		playVideo(clip);
@@ -46,6 +45,10 @@
 		clip.currentTime = 0;
 	}
 
+	// rate can be a positive integer
+	// .5 is half speed, 1 is normal speed,
+	// 2 is double speed, etc.
+	//Only Safari supports negative values (backwards)
 	function playRate(clip, rate) 
 	{
 		clip.playbackRate = rate;

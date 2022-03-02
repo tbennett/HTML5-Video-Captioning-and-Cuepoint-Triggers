@@ -14,7 +14,7 @@ h1 {
  
 #container {
   display:grid;
-  grid-gap: 3%;
+  grid-gap: 2rem;
   grid-template-columns: 1fr 2fr;
   position: relative;
   margin:auto;
@@ -29,7 +29,7 @@ h1 {
 
 .col1 {
 	border:1px solid black;
-	margin-right: 5%;
+  height: fit-content;
 }
  
 
@@ -93,3 +93,12 @@ iframe {
 }
 
 
+@media screen and (max-width:600px) {
+  #container {
+    grid-template-columns: 1fr;
+  }
+
+  .col2 {
+    grid-row: 2;
+  }
+}

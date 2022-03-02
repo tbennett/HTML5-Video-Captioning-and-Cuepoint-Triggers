@@ -45,7 +45,7 @@
 				<form id="video_form">
 					<fieldset>
 						<input type="button" id="play_button" onclick="playVideo(vid)" value="Play" />
-						<input type="button" id="pause_button" onclick="pauseVideo(vid)" value="Pause" disabled />
+						<input type="button" id="pause_button" onclick="pauseVideo(vid)" value="Pause" />
 						<input type="button" id="mute" onclick="muteVid(vid)" value="Mute" />
 						<input type="button" id="unmute" onclick="unmuteVid(vid)" value="Unmute" />
 						<input type="button" id="rewind" onclick="seekVideo(vid, 0)" value="Beginning" />
@@ -60,58 +60,18 @@
 							<option value="assets/leverage-a-synergy.webm">Leverage(webm)</option>
 						</select>
 					</fieldset>
-				</form>
-			</div>
-
-			<div id="special">
-				<form>
 					<fieldset>
 						<label>Currently, rewind only works in Safari
 							<input type=button id="rw" onclick="playRate(vid,-1)" value="&lt; &lt;rewind" />
 						</lable>
 						<input type=button id="ff" onclick="playRate(vid,2)" value="fast forward >>" />
 						<input type=button id="slo" onclick="playRate(vid,.5)" value="slo mo >" />
+						<input type=button id="normal" onclick="playRate(vid,1)" value="normal >" />
 					</fieldset>
 				</form>
 			</div>
 
-
-			<div id="transcript">
-				<h3>Transcript</h3>
-				<p>
-					<span data-begin=1 data-end=6>Hi, my name's Dr Archimedes Einstein and I'm a Doctor of Science at
-						the University of Science</span>
-					<span data-begin=6 data-end=9>in a very famous town that you're too stupid to have heard of.</span>
-					<span data-begin=9.5 data-end=11.5>Anyway, today we're going to talk about "synergies".</span>
-
-					<span data-begin=12 data-end=14>A lot of people are worried about synergies, but I can tell you
-						that</span>
-					<span data-begin=15 data-end=16>statistics show</span>
-					<span data-begin=16 data-end=19>there is no danger of increased cancer risk from synergies.</span>
-					<span data-begin=19.5 data-end=21.5>However, it's better to be safe than sorry.</span>
-					<span data-begin=22 data-end=25> I'm going to demonstrate how you how we can leverage a
-						synergy.</span>
-				</p>
-				<p>
-					<span data-begin=25 data-end=26.5>First of all, I've got this banana</span>
-					<span data-begin=26.5 data-end=29>This banana represents "Web 2.0" and look,</span>
-					<span data-begin=29 data-end=32>I've written on it some "user-generated content"</span>
-					<span data-begin=32 data-end=34>just to prove the point [You Suck, WTF, LOL]
-					</span>
-					<span data-begin=34 data-end=37>I take my "Web 2.0" and I put it in an envelope</span>
-					<span data-begin=37 data-end=39>marked "paradigm shift".</span>
-					<span data-begin=39 data-end=44>OK. Very important, I put the envelope down and</span>
-					<span data-begin=44.5 data-end=46>With a bit of "blue sky thinking"</span>
-					<span data-begin=46.4 data-end=48>I "push the envelope"</span>
-					<span data-begin=48 data-end=50>Then, I take my leverage mallet, and</span>
-					<span data-begin=50.3 data-end=51>URGH!</span>
-					<span data-begin=51 data-end=52>RGRRRRRARGRGGH!!</span>
-					<span data-begin=52 data-end=53>EURGGGARRRRGGGRRGARGG!! AHAARRAGGHGRRAGAHAARGH!!!!</span>
-					<span data-begin=52 data-end=56.5>...and there we can see a synergy, leveraged.</span>
-				</p>
-			</div>
-
-			<div class="pop">
+			<div class="pop hide">
 				<p>Test This!</p>
 			</div>
 		</section>
