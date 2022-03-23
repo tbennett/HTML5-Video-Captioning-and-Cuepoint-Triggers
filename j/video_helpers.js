@@ -21,16 +21,12 @@
 			for (let track of clip.textTracks) {
 				track.mode = 'hidden';
 				track.selected = false;
-
-				console.log(track);
 			}
 
 			//turn on the selected track 
-			const theTrack = clip.textTracks[id];
+			const theTrack = clip.textTracks.getTrackById(id);
 			theTrack.selected = true;
 			theTrack.mode = 'showing';
-				
-			console.log("-----", theTrack);
 		}
 	}
 

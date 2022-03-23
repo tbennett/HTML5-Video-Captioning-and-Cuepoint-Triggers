@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     });
 
     selectTxt.addEventListener("change", (e) => {
-        const id = e.target.selectedIndex - 1;
+        const id = e.target.value;
         selectTrack(e, vid, id);
     });
 
