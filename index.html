@@ -19,10 +19,12 @@
 		<section class="col1">
 
 			<video id="vid" width="352" controls>
-				<source src="assets/leverage-a-synergy.mp4" type="video/mp4" />
-				<source src="assets/leverage-a-synergy.webm" type="video/webm" />
-				<source src="assets/leverage-a-synergy.ogv" type="video/ogg" />
-				<track kind="captions" label="On" srclang="en" src="./captions/synergy.vtt" default />
+				<source src="assets/leverage-a-synergy.mp4" type="video/mp4">
+				<source src="assets/leverage-a-synergy.webm" type="video/webm">
+				<source src="assets/leverage-a-synergy.ogv" type="video/ogg">
+				<track id="fr" kind="subtitles" label="On" srclang="french" src="subtitles/french.vtt">
+				<track id="es" kind="subtitles" label="On" srclang="spanish" src="subtitles/spanish.vtt">
+				<track id="en-cap" kind="captions" label="On" srclang="english" src="captions/synergy.vtt">
 
 				<!-- final fallback to text -->
 				<h2>How to leverage a synergy</h2>
@@ -58,6 +60,14 @@
 							<option value="assets/leverage-a-synergy.mp4">Leverage(mp4)</option>
 							<option value="assets/leverage-a-synergy.ogv">Leverage(ogv)</option>
 							<option value="assets/leverage-a-synergy.webm">Leverage(webm)</option>
+						</select>
+					</fieldset>
+					<fieldset>
+						<select id="text-track">
+							<option>Select a subtitle language...</option>
+							<option value="fr">Francais</option>
+							<option value="sp">Espanol</option>
+							<option value="en">English caption</option>
 						</select>
 					</fieldset>
 					<fieldset>

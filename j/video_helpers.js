@@ -13,6 +13,27 @@
 		playVideo(clip);
 	}
 
+	function selectTrack(e, clip, id) 
+	{
+		if(clip.textTracks.length > 0) {
+			
+			//set all tracks inactive
+			for (let track of clip.textTracks) {
+				track.mode = 'hidden';
+				track.selected = false;
+
+				console.log(track);
+			}
+
+			//turn on the selected track 
+			const theTrack = clip.textTracks[id];
+			theTrack.selected = true;
+			theTrack.mode = 'showing';
+				
+			console.log("-----", theTrack);
+		}
+	}
+
 	function playVideo(clip) 
 	{
 		clip.play();

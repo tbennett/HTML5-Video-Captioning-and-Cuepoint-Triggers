@@ -26,10 +26,16 @@ document.addEventListener("DOMContentLoaded", (e) => {
     cueTimer.setup("vid", myCues);
 
     const vid = document.querySelector("#vid");
-    const selectList = document.querySelector("#video_select");
-
-    selectList.addEventListener("change", (e) => {
+    const selectVid = document.querySelector("#video_select");
+    const selectTxt = document.querySelector("#text-track");
+    
+    selectVid.addEventListener("change", (e) => {
         selectVideo(e, vid);
+    });
+
+    selectTxt.addEventListener("change", (e) => {
+        const id = e.target.selectedIndex - 1;
+        selectTrack(e, vid, id);
     });
 
 });
