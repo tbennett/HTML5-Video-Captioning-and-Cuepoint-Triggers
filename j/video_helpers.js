@@ -25,6 +25,7 @@
 
 			//turn on the selected track 
 			const theTrack = clip.textTracks.getTrackById(id);
+			console.log(theTrack);
 			theTrack.selected = true;
 			theTrack.mode = 'showing';
 		}
