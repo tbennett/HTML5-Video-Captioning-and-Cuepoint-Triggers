@@ -5,7 +5,7 @@
  * built into HTML5. It is inspired by Bruce Lawson's example hack for creating video captions.
  * I added the ability to associate custom callbacks with moments in time of the video.
  *
- * 
+ * @format
  * @NOTE: Mozilla released Popcorn and Butter for doing the same thing right after I got this working.
  * @UPDATE: Popcorn and Butter are dead. This is now useful again. I've updated it to be vanilla JS with no dependencies. by Troy Bennett 7-2010 (updated 12-2021)
  */
@@ -13,7 +13,6 @@
 import { cueTimer } from "./modules/cuepoints.js";
 
 document.addEventListener("DOMContentLoaded", (e) => {
-
     var myCues = [
         { seconds: 2, callback: func1 },
         { seconds: 9, callback: func2 },
@@ -28,7 +27,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
     const vid = document.querySelector("#vid");
     const selectVid = document.querySelector("#video_select");
     const selectTxt = document.querySelector("#text-track");
-    
+    const display = document.getElementById("transcript");
+    const transcript_en = document.getElementById("transcript-en");
+    const transcript_es = document.getElementById("transcript-es");
+    const transcript_fr = document.getElementById("transcript-fr");
+    const showHide = document.getElementById("show-hide");
+
     selectVid.addEventListener("change", (e) => {
         selectVideo(e, vid);
     });
@@ -38,9 +42,41 @@ document.addEventListener("DOMContentLoaded", (e) => {
         selectTrack(e, vid, id);
     });
 
+    transcript_en.addEventListener(
+        "click",
+        function (e) {
+            e.preventDefault();
+            webvttTranscript("captions/synergy.vtt", display);
+        });
+
+    transcript_es.addEventListener(
+        "click",
+        function (e) {
+            e.preventDefault();
+            webvttTranscript("subtitles/spanish.vtt", display);
+        });
+
+    transcript_fr.addEventListener(
+        "click",
+        function (e) {
+            e.preventDefault();
+            webvttTranscript("subtitles/french.vtt", display);
+        });
+
+    showHide.addEventListener(
+        "click",
+        function (e) {
+            e.preventDefault();
+            webvttTranscript("subtitles/french.vtt", display);
+            if (e.target.innerHTML == "Show Transcript") {
+                e.target.innerHTML = "Hide Transcript";
+                display.style.display = "block";
+            } else {
+                e.target.innerHTML = "Show Transcript";
+                display.style.display = "none";
+            }
+        });
 });
-
-
 
 //the custom callback functions to trigger when a cuepoint is hit.
 //You can code up whatever behavior you need in your own callbacks

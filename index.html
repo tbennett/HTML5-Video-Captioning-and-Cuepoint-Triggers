@@ -7,6 +7,7 @@
 
 	<link rel="stylesheet" href="c/main.css" />
 	<script src="j/video_helpers.js" defer></script>
+	<script src="j/transcript.js" defer></script>
 	<script type="module" src="j/main.js" defer></script>
 
 </head>
@@ -84,7 +85,17 @@
 			<div class="pop hide">
 				<p>Test This!</p>
 			</div>
+
+			<div class="show-captions">
+				<h3><a id="show-hide" href="#">Show Transcript</a></h3>
+				<a id="transcript-en" href="#">English</a>
+				<a id="transcript-es" href="#">Spanish</a>
+				<a id="transcript-fr" href="#">French</a>
+				<div id="transcript"></div>
+			</div>
+
 		</section>
+
 
 		<section class="col2">
 			<iframe id="web" src=""></iframe>
