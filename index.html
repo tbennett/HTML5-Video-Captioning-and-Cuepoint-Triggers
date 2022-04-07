@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="c/main.css" />
 	<script src="j/video_helpers.js" defer></script>
 	<script src="j/transcript.js" defer></script>
-	<script type="module" src="j/main.js" defer></script>
+	<script type="module" src="j/main.js"></script>
 
 </head>
 
@@ -23,9 +23,9 @@
 				<source src="assets/leverage-a-synergy.mp4" type="video/mp4">
 				<source src="assets/leverage-a-synergy.webm" type="video/webm">
 				<source src="assets/leverage-a-synergy.ogv" type="video/ogg">
-				<track id="fr" kind="subtitles" label="Francais" srclang="french" src="subtitles/french.vtt">
-				<track id="es" kind="subtitles" label="Espanol" srclang="spanish" src="subtitles/spanish.vtt">
-				<track id="en" kind="captions" label="English (captions)" srclang="english" src="captions/synergy.vtt" default>
+				<track id="fr" kind="subtitles" label="Francais" srclang="fr" src="subtitles/french.vtt">
+				<track id="es" kind="subtitles" label="Espanol" srclang="es" src="subtitles/spanish.vtt">
+				<track id="en" kind="captions" label="English (captions)" srclang="en" src="captions/synergy.vtt" default>
 
 				<!-- final fallback to text -->
 				<h2>How to leverage a synergy</h2>
@@ -74,7 +74,7 @@
 					<fieldset>
 						<label>Currently, rewind only works in Safari
 							<input type=button id="rw" onclick="playRate(vid,-1)" value="&lt; &lt;rewind" />
-						</lable>
+						</label>
 						<input type=button id="ff" onclick="playRate(vid,2)" value="fast forward >>" />
 						<input type=button id="slo" onclick="playRate(vid,.5)" value="slo mo >" />
 						<input type=button id="normal" onclick="playRate(vid,1)" value="normal >" />
