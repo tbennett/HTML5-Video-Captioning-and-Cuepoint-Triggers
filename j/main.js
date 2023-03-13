@@ -12,14 +12,17 @@
 
 import { cueTimer } from "./modules/cuepoints.js";
 
-document.addEventListener("DOMContentLoaded", (e) => {
-    var myCues = [
+document.addEventListener("DOMContentLoaded", init)
+var myCues;
+function init() {
+
+   myCues = [
         { seconds: 2, callback: func1 },
         { seconds: 9, callback: func2 },
         { seconds: 15, callback: func3 },
         { seconds: 25, callback: func6 },
         { seconds: 37, callback: func4 },
-        { seconds: 50, callback: func5 },
+        { seconds: 50, callback: func5 }
     ];
 
     cueTimer.setup("vid", myCues);
@@ -34,6 +37,26 @@ document.addEventListener("DOMContentLoaded", (e) => {
     const showHide = document.getElementById("show-hide");
 
     selectVid.addEventListener("change", (e) => {
+ 
+        if (e.target.value == 'assets/leverage-a-synergy.mp4') {
+            
+            selectTrack(null, vid, 'en');
+
+            myCues = [
+                { seconds: 2, callback: func1 },
+                { seconds: 9, callback: func2 },
+                { seconds: 15, callback: func3 },
+                { seconds: 25, callback: func6 },
+                { seconds: 37, callback: func4 },
+                { seconds: 50, callback: func5 }
+            ];
+            cueTimer.setup("vid", myCues);
+
+        } else if(e.target.value == 'assets/bunny.mp4') {
+            myCues.splice(0, myCues.length);
+            selectTrack(null, vid, 'en-bunny');
+        }
+        
         selectVideo(e, vid);
     });
 
@@ -76,7 +99,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
                 display.style.display = "none";
             }
         });
-});
+}
+
+
 
 //the custom callback functions to trigger when a cuepoint is hit.
 //You can code up whatever behavior you need in your own callbacks

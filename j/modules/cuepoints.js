@@ -65,10 +65,12 @@ const CueTimer = () => {
 				}
 			}
 		});
+
+		return this;
 	}
 	
 	return {setup: init};
 	
 }
 
-export const cueTimer = CueTimer();
+export let cueTimer = CueTimer();
