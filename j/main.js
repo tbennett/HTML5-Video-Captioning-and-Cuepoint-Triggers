@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", init)
 var myCues;
 function init() {
 
+    // create a playlist of functions to call at certain moments in the video.
    myCues = [
         { seconds: 2, callback: func1 },
         { seconds: 9, callback: func2 },
@@ -25,8 +26,10 @@ function init() {
         { seconds: 50, callback: func5 }
     ];
 
+    // setup the cuepoint timer
     cueTimer.setup("vid", myCues);
 
+    // create shortcut variables
     const vid = document.querySelector("#vid");
     const selectVid = document.querySelector("#video_select");
     const selectTxt = document.querySelector("#text-track");
@@ -36,12 +39,17 @@ function init() {
     const transcript_fr = document.getElementById("transcript-fr");
     const showHide = document.getElementById("show-hide");
 
+    // initialize video select dropdown behavior
     selectVid.addEventListener("change", (e) => {
  
+        // depending on which video is selected, change the cues
+        // and change the captions.
         if (e.target.value == 'assets/leverage-a-synergy.mp4') {
             
+            // choose the english caption text
             selectTrack(null, vid, 'en');
 
+            // reset the cues playlist
             myCues = [
                 { seconds: 2, callback: func1 },
                 { seconds: 9, callback: func2 },
@@ -50,21 +58,26 @@ function init() {
                 { seconds: 37, callback: func4 },
                 { seconds: 50, callback: func5 }
             ];
+            // recreate the cue timer
             cueTimer.setup("vid", myCues);
 
         } else if(e.target.value == 'assets/bunny.mp4') {
+            // if bunny video, empty the myCues array
+            // and change the caption texts
             myCues.splice(0, myCues.length);
             selectTrack(null, vid, 'en-bunny');
         }
-        
+        // finally, swap the video to play
         selectVideo(e, vid);
     });
 
+    // initialize video captions dropdown behavior
     selectTxt.addEventListener("change", (e) => {
         const id = e.target.value;
         selectTrack(e, vid, id);
     });
 
+    // initialize text transcript display (english)
     transcript_en.addEventListener(
         "click",
         function (e) {
@@ -72,6 +85,7 @@ function init() {
             webvttTranscript("captions/synergy.vtt", display);
         });
 
+    // initialize text transcript display (Spanish)
     transcript_es.addEventListener(
         "click",
         function (e) {
@@ -79,6 +93,7 @@ function init() {
             webvttTranscript("subtitles/spanish.vtt", display);
         });
 
+    // initialize text transcript display (French)
     transcript_fr.addEventListener(
         "click",
         function (e) {
@@ -86,6 +101,7 @@ function init() {
             webvttTranscript("subtitles/french.vtt", display);
         });
 
+        
     showHide.addEventListener(
         "click",
         function (e) {
