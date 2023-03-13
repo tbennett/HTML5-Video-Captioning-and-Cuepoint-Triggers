@@ -1,2 +1,9 @@
 .DS_Store
-.DS_Store
+./.DS_Store
+./assets/.DS_Store
+./c/.DS_Store
+./captions/.DS_Store
+./images/.DS_Store
+./j/.DS_Store
+./j/modules/.DS_Store
+./subtitles/.DS_Store

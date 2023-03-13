@@ -8,7 +8,7 @@ body {
   background: rgb(204, 219, 240);
 }
 
-h1 {
+h1, h2 {
 	text-align:center;
 }
  
@@ -37,6 +37,10 @@ h1 {
 	height: 100vh;
 }
 
+fieldset {
+  padding: .5rem;
+  margin:.5rem;
+}
 
 iframe {
 	width:100%;
@@ -57,6 +61,8 @@ iframe {
   padding-bottom: .5em;
   background-color:hsla(250,10%,50%,0.8)
 }
+
+.slomo {font-size:.7rem;}
 
 #transcript span {
   display:table-row;

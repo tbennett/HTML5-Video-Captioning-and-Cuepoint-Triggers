@@ -14,6 +14,7 @@
 
 <body>
 	<h1>HTML5 Video with JS synchronized cuepoints: demo</h1>
+	<h2>Kitchen Sink version: Be selective with what you eventually need for a positive user experience</h2>
 
 	<main id="container">
 
@@ -47,23 +48,29 @@
 			<div id="controls">
 				<form id="video_form">
 					<fieldset>
+						<legend>Playback controls</legend>
 						<input type="button" id="play_button" onclick="playVideo(vid)" value="Play" />
 						<input type="button" id="pause_button" onclick="pauseVideo(vid)" value="Pause" />
 						<input type="button" id="mute" onclick="muteVid(vid)" value="Mute" />
 						<input type="button" id="unmute" onclick="unmuteVid(vid)" value="Unmute" />
+
+						<fieldset>
+							<legend>Chapter links</legend>
 						<input type="button" id="rewind" onclick="seekVideo(vid, 0)" value="Beginning" />
 						<input type="button" id="end" onclick="seekVideo(vid, 57)" value="End" />
 						<input type="button" id="seek" onclick="seekVideo(vid, 14)" value="Go to Statistics" />
+						</fieldset>
 					</fieldset>
 					<fieldset>
+						<legend>Select a video to watch</legend>
 						<select id="video_select">
 							<option>Select a video to play...</option>
 							<option value="assets/leverage-a-synergy.mp4">Leverage(mp4)</option>
-							<option value="assets/leverage-a-synergy.ogv">Leverage(ogv)</option>
-							<option value="assets/leverage-a-synergy.webm">Leverage(webm)</option>
+							<option value="assets/bunny.mp4">Bunny(mp4)</option>
 						</select>
 					</fieldset>
 					<fieldset>
+						<legend>Select a caption/subtitle to read</legend>
 						<select id="text-track">
 							<option>Select a subtitle language...</option>
 							<option value="fr">Francais</option>
@@ -72,9 +79,10 @@
 						</select>
 					</fieldset>
 					<fieldset>
-						<label>Currently, rewind only works in Safari
+						<legend>Playback speed</legend>
+						<p class="slomo">Currently, rewind only works in Safari</p>
 							<input type=button id="rw" onclick="playRate(vid,-1)" value="&lt; &lt;rewind" />
-						</label>
+						
 						<input type=button id="ff" onclick="playRate(vid,2)" value="fast forward >>" />
 						<input type=button id="slo" onclick="playRate(vid,.5)" value="slo mo >" />
 						<input type=button id="normal" onclick="playRate(vid,1)" value="normal >" />
@@ -98,7 +106,7 @@
 
 
 		<section class="col2">
-			<iframe id="web" src=""></iframe>
+			<iframe id="web" src="start.html"></iframe>
 		</section>
 
 	</main>
